@@ -1,0 +1,55 @@
+/* GLOBAL STYLES */
+
+* {
+    text-align: center;
+    margin: 0;
+    background-color: #2a2438;
+}
+
+/* HEADER SECTION STYLES */
+
+
+#site-header {
+    background-color: #dbd8e3;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#codeflow {
+    background-color: #dbd8e3;
+    color: #2a2438;
+    font-family: "Rubik";
+    font-weight: bold;
+}
+
+#projectName {
+    background-color: #dbd8e3;
+    color: #352f44;
+    font-family: "Open Sans";
+}
+
+/* GRID CONTAINER STYLES */
+
+.main-grid {
+    display: grid;
+    height: 100vh;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-right: 10px;
+    grid-template-columns: 1fr 1fr  1fr 1fr;
+    column-gap: 10px;
+
+}
+
+.main-column {
+    background-color: #5c5470;
+
+}
+
+h4 {
+    background-color: #dbd8e3ab;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: "Open Sans";
+    border-bottom: 3px solid #2a2438;
+}

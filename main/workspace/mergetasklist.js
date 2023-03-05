@@ -1,0 +1,1 @@
+const mergetask = require("components/mergetask.js");
