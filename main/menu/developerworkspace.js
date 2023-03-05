@@ -1,5 +1,9 @@
 
 define(function(require, exports, module) {
+    //let developerTaskList = require("./workspace/developertasklist");
+    //let inprocessTaskList = require("./workspace/inprocesstasklist");
+    //let mergeTaskList = require("./workspace/mergetasklist");
+    //let reviewTaskList = require("./workspace/reviewtasklist");
 
 // ****************************************************************************************************************
 // DEFINITIONS ****************************************************************************************************
@@ -93,6 +97,6 @@ define(function(require, exports, module) {
 // INITIALIZATION *************************************************************************************************
 // ****************************************************************************************************************
 
-    return DeveloperWorkspace
+    return DeveloperWorkspace;
 
 });
