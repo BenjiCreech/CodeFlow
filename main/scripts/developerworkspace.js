@@ -1,9 +1,9 @@
 
 define(function(require, exports, module) {
-    //let developerTaskList = require("./workspace/developertasklist");
-    //let inprocessTaskList = require("./workspace/inprocesstasklist");
-    //let mergeTaskList = require("./workspace/mergetasklist");
-    //let reviewTaskList = require("./workspace/reviewtasklist");
+    let developerTaskList = require("developertasklist");
+    let inprocessTaskList = require("inprocesstasklist");
+    let mergeTaskList = require("mergetasklist");
+    let reviewTaskList = require("reviewtasklist");
 
 // ****************************************************************************************************************
 // DEFINITIONS ****************************************************************************************************
@@ -40,32 +40,48 @@ define(function(require, exports, module) {
      * 
      * @param {Boolean} value 
      */
-    DeveloperWorkspace.prototype.addDeveloperTaskListPanel = function(value) {
-
+    DeveloperWorkspace.prototype.showDeveloperTaskListPanel = function(value) {
+        let showPanel = "none";
+        if (value) {
+            showPanel = "block";
+        }
+        document.getElementById("list-1").style.display = showPanel;
     }
 
     /**
      * 
      * @param {Boolean} value 
      */
-    DeveloperWorkspace.prototype.addInprocessTaskListPanel = function(value) {
-
+    DeveloperWorkspace.prototype.showInprocessTaskListPanel = function(value) {
+        let showPanel = "none";
+        if (value) {
+            showPanel = "block";
+        }
+        document.getElementById("list-2").style.display = showPanel;
     }
 
     /**
      * 
      * @param {Boolean} value 
      */
-    DeveloperWorkspace.prototype.addMergeTaskListPanel = function(value) {
-
+    DeveloperWorkspace.prototype.showMergeTaskListPanel = function(value) {
+        let showPanel = "none";
+        if (value) {
+            showPanel = "block";
+        }
+        document.getElementById("list-3").style.display = showPanel;
     }
 
     /**
      * 
      * @param {Boolean} value 
      */
-    DeveloperWorkspace.prototype.addReviewTaskListPanel = function(value) {
-
+    DeveloperWorkspace.prototype.showReviewTaskListPanel = function(value) {
+        let showPanel = "none";
+        if (value) {
+            showPanel = "block";
+        }
+        document.getElementById("list-4").style.display = showPanel;
     }
 
     /**

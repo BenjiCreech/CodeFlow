@@ -1,6 +1,6 @@
 
 define(function(require, exports, module) {
-    //let developerTask = require("./components/developertask.js");
+    let developerTask = require("reviewtask");
 
 
 // ****************************************************************************************************************
@@ -18,9 +18,9 @@ define(function(require, exports, module) {
     * constructor
     * 
     */
-    class DeveloperTaskList {
+    class ReviewTaskList {
         constructor() {
-            this.developerTask = undefined;
+
         }
     }
 
@@ -35,6 +35,6 @@ define(function(require, exports, module) {
 // INITIALIZATION *************************************************************************************************
 // ****************************************************************************************************************
 
-    return DeveloperTaskList;
+    return ReviewTaskList;
 
 });

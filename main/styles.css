@@ -32,7 +32,6 @@
 
 .main-grid {
     display: grid;
-    height: 100vh;
     box-sizing: border-box;
     margin-left: 10px;
     margin-right: 10px;
@@ -41,15 +40,38 @@
 
 }
 
-.main-column {
+.col-container {
+    height: 100vh;
     background-color: #5c5470;
-
+    display: none;
 }
+
+.col-header {
+    display:inline-flex;
+}
+
 
 h4 {
     background-color: #dbd8e3ab;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-right: 20px;
+    font-family: "Open Sans";
+    border-bottom: 3px solid #2a2438;
+}
+
+button {
+    font-size: 14px;
+    color:#dbd8e3ab;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.btn-container {
+    background-color: #dbd8e3ab;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
     font-family: "Open Sans";
     border-bottom: 3px solid #2a2438;
 }

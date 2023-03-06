@@ -1,10 +1,10 @@
 
 requirejs.config({
-   baseUrl: '/main'
+   baseUrl: '/main/scripts/'
     });
 
 requirejs([
-    "libraries/index"
+    "index"
 ], function () {
 
 })

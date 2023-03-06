@@ -1,6 +1,6 @@
 
 define(function(require, exports, module) {
-    let developerTask = require("./components/inprocesstask");
+    let developerTask = require("inprocesstask");
 
 
 // ****************************************************************************************************************
