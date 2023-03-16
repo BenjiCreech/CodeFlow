@@ -12,9 +12,9 @@ define(function(require) {
     let newButton = document.getElementById("new-dev-btn");
     newButton.addEventListener("click", newWorkspace.addNewTask);
 
-//Testing Themes
 
-    const switcher = document.querySelector('#theme-switcher')
+//Setup Themes
+const switcher = document.querySelector('#theme-switcher')
 const doc = document.firstElementChild
 
 switcher.addEventListener('input', e => {
