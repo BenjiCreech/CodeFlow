@@ -36,6 +36,10 @@ define(function(require, exports, module) {
         }
     }
 
+    DeveloperWorkspace.prototype.addNewTask = function() {
+        return developerTaskList.prototype.addNewTask();
+    }
+
     /**
      * 
      * @param {Boolean} value 
@@ -93,14 +97,6 @@ define(function(require, exports, module) {
         document.getElementById("projectName").innerHTML = name;
     }
 
-    /**
-     * 
-     * @param {branchName} name 
-     */
-    DeveloperWorkspace.prototype.setBranchName = function(name) {
-        this.branchName = name;
-        document.getElementById("projectName").innerHTML += `: ${name}`;
-    }
 
 
 // ****************************************************************************************************************
