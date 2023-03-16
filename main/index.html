@@ -5,53 +5,155 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
    </head>
 
     <body>
 
         <header>
             <div id="site-header">
-                <h1 id="codeflow">CODE FLOW</h1>
-                <h3 id="projectName"></h3>
+                <h2 id="codeflow">CODE FLOW</h2>
+                <h4 id="projectName"></h4>
+                <h3>Theme</h3>
+                <form id="theme-switcher">
+                    <div>
+                        <input checked type="radio" id="auto" name="theme" value="auto">
+                        <label for="auto">Auto</label>
+                    </div>
+                    <div>
+                        <input checked type="radio" id="light" name="theme" value="light">
+                        <label for="auto">Light</label>
+                    </div>
+                    <div>
+                        <input checked type="radio" id="dark" name="theme" value="dark">
+                        <label for="auto">Dark</label>
+                    </div>
+                    <div>
+                        <input checked type="radio" id="dim" name="theme" value="dim">
+                        <label for="auto">Dim</label>
+                    </div>
+                    <div>
+                        <input checked type="radio" id="grape" name="theme" value="grape">
+                        <label for="auto">Grape</label>
+                    </div>
+                    <div>
+                        <input checked type="radio" id="choco" name="theme" value="choco">
+                        <label for="auto">Choco</label>
+                    </div>
+                </form>
             </div>
+            <dialog id="new-dialog" modal-mode="mega">
+                <form method="dialog">
+                    <header>
+                        <h3>New Developer Task</h3>
+                    </header>
+                    <article>
+
+                    </article>
+                    <footer>
+                        <menu>
+                            <button type="submit" value="confirm">Create</button>
+                            <button autofocus type="reset">Cancel</button>
+                        </menu>
+                    </footer>
+                </form>
+            </dialog>
             
         </header>
 
         <main>
             <div class="main-grid">
                 <div class="main-column" id="main-col-1">
-                    <h4>Developer Task List</h4>
-                    <div class="col-container">
-
+                    <div class="col-header">
+                        <h4>Developer Task List</h4>
+                        <div class="icon-container">
+                            <i class="material-icons" id="search-dev-btn">search</i>
+                            <i class="material-icons" id="sort-dev-btn">sort</i>
+                            <i class="material-icons" id="config-dev-btn">settings</i>
+                            <i class="material-icons" id="new-dev-btn">add_circle</i>
+                        </div>
+                    </div>
+                    <div class="col-container" id="list-1">
                     </div>
                 </div>
 
                 <div class="main-column" id="main-col-2">
-                    <h4>Inprocess</h4>
-                    <div class="col-container">
+                    <div class="col-header">
+                        <h4>Inprocess</h4>
+                        <div class="icon-container">
+                            <i class="material-icons" id="search-dev-btn">search</i>
+                            <i class="material-icons" id="sort-dev-btn">sort</i>
+                            <i class="material-icons" id="config-dev-btn">settings</i>
+                        </div>
+                    </div>
+                    <div class="col-container" id="list-2">
 
                     </div>
                 </div>
 
                 <div class="main-column" id="main-col-3">
-                    <h4>Review</h4>
-                    <div class="col-container">
+                    <div class="col-header">
+                        <h4>Review</h4>
+                        <div class="icon-container">
+                            <i class="material-icons" id="search-dev-btn">search</i>
+                            <i class="material-icons" id="sort-dev-btn">sort</i>
+                            <i class="material-icons" id="config-dev-btn">settings</i>
+                        </div>
+                    </div>
+                    <div class="col-container" id="list-3">
 
                     </div>
                 </div>
 
                 <div class="main-column" id="main-col-4">
-                    <h4>Ready to Merge</h4>
-                    <div class="col-container">
+                    <div class="col-header">
+                        <h4>Ready to Merge</h4>
+                        <div class="icon-container">
+                            <i class="material-icons" id="search-dev-btn">search</i>
+                            <i class="material-icons" id="sort-dev-btn">sort</i>
+                            <i class="material-icons" id="config-dev-btn">settings</i>
+                        </div>
+                    </div>
+                    <div class="col-container" id="list-4">
 
                     </div>
                 </div>
             </div>
         </main>
+        <main>
+            <section>
+              <div class="surface-samples">
+                <div class="surface-1 rad-shadow">1</div>
+                <div class="surface-2 rad-shadow">2</div>
+                <div class="surface-3 rad-shadow">3</div>
+                <div class="surface-4 rad-shadow">4</div>
+              </div>
+            </section>
+          
+            <section>
+              <div class="text-samples">
+                <h1 class="text-1">
+                  <span class="swatch brand rad-shadow"></span>
+                  Brand
+                </h1>
+                <h1 class="text-1">
+                  <span class="swatch text-1 rad-shadow"></span>
+                  Text Color 1
+                </h1>
+                <h1 class="text-2">
+                  <span class="swatch text-2 rad-shadow"></span>
+                  Text Color 2
+                </h1>
+                <br>
+                <p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="text-2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </section>
+          </main>
 
         <footer>
 
         </footer>
-        <script data-main = "libraries/main" src = "libraries/require.js"></script>
+        <script data-main = "libraries/config" src = "libraries/require.js"></script>
     </body>
 </html>
