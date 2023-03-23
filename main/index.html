@@ -8,49 +8,70 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
    </head>
 
-    <body>
+    <body id="body">
 
         <header>
-            <div id="site-header">
-                <h2 id="codeflow">CODE FLOW</h2>
-                <h3 id="projectName"></h3>
-                <h3>Theme</h3>
-                <form id="theme-switcher">
-                    <div>
-                        <input checked type="radio" id="auto" name="theme" value="auto">
-                        <label for="auto">Auto</label>
+            <div class="header-grid" id="site-header">
+                <div class="header-col" id="menu-container">
+                    <i class="material-icons" id="menu-btn">menu</i>
+                    <div id="menu-list-container">
+                        <div class="menu-items" id="menu-items">
+                            <a class="menu-item" href="#">My Workspaces</a>
+                            <a class="menu-item" href="#">Project Notes</a>
+                            <a class="menu-item" href="#">Project Teams</a>
+                            <a class="menu-item" href="#">Project Files</a>
+                            <a class="menu-item" id="menu-item-theme" href="#">Themes</a>
+                            <a class="menu-item" href="#">Settings</a>
+                            <a class="menu-item" href="#">My Account</a>
+                            <a class="menu-item" href="#">Log Out</a>
+
+                        </div>
+                        <div class="menu-items" id="theme-container">
+                            <form id="theme-switcher">
+                                <div>
+                                    <input type="radio" id="auto" name="theme" value="auto">
+                                    <label for="auto">Auto</label>
+                                </div>
+                                <div>
+                                    <input checked type="radio" id="light" name="theme" value="light">
+                                    <label for="light">Light</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="dark" name="theme" value="dark">
+                                    <label for="dark">Dark</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="dim" name="theme" value="dim">
+                                    <label for="dim">Dim</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="grape" name="theme" value="grape">
+                                    <label for="grape">Grape</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="choco" name="theme" value="choco">
+                                    <label for="cafe">Cafe</label>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div>
-                        <input checked type="radio" id="light" name="theme" value="light">
-                        <label for="auto">Light</label>
-                    </div>
-                    <div>
-                        <input checked type="radio" id="dark" name="theme" value="dark">
-                        <label for="auto">Dark</label>
-                    </div>
-                    <div>
-                        <input checked type="radio" id="dim" name="theme" value="dim">
-                        <label for="auto">Dim</label>
-                    </div>
-                    <div>
-                        <input checked type="radio" id="grape" name="theme" value="grape">
-                        <label for="auto">Grape</label>
-                    </div>
-                    <div>
-                        <input checked type="radio" id="choco" name="theme" value="choco">
-                        <label for="auto">Choco</label>
-                    </div>
-                </form>
+                   
+                </div>
+                <div class="header-col" id="title-container">
+                    <h2 id="codeflow">CODE FLOW</h2>
+                    <h3 id="projectName"></h3>
+                </div>
+                <div class="header-col" id="empty-container"></div>
             </div>
             <dialog id="new-dialog" modal-mode="mega">
-                <form method="dialog">
+                <form id="new-form" method="dialog">
                     <header>
-                        <h3>New Developer Task</h3>
+                        <h3 id="task-dialog-head">New Developer Task</h3>
                     </header>
-                    <article>
+                    <article id="new-form-article">
 
                     </article>
-                    <footer>
+                    <footer class="dialog-footer">
                         <menu>
                             <button type="submit" value="confirm">Create</button>
                             <button autofocus type="reset">Cancel</button>

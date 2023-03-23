@@ -40,6 +40,10 @@ define(function(require, exports, module) {
         return developerTaskList.prototype.addNewTask();
     }
 
+    DeveloperWorkspace.prototype.openMenu = function() {
+        openMenu();
+    }
+
     /**
      * 
      * @param {Boolean} value 
@@ -103,7 +107,15 @@ define(function(require, exports, module) {
 // INTERNAL FUNCTIONS *********************************************************************************************
 // ****************************************************************************************************************
 
-
+    function openMenu() {
+        let menuItems = document.getElementById("menu-items");
+        let display = menuItems.style.display;
+        if (display == "grid") {
+            menuItems.style.display = "none";
+        } else {
+            menuItems.style.display = "grid";
+        }
+    }
 
 // ****************************************************************************************************************
 // INITIALIZATION *************************************************************************************************

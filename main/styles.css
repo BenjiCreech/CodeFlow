@@ -78,10 +78,12 @@
     --brand-choco: var(--choco-4);
     --text-1-choco: var(--choco-1);
     --text-2-choco: var(--choco-2);
+    --text-3-choco: var(--choco-5);
     --surface-1-choco: var(--choco-12);
     --surface-2-choco: var(--choco-11);
     --surface-3-choco: var(--choco-10);
     --surface-4-choco: var(--choco-9);
+    --surface-5-choco: var(--choco-10);
     --surface-shadow-choco: 25deg 65% 11%;
     --shadow-strength-choco: 50%;
   }
@@ -143,6 +145,7 @@
     --surface-2: var(--surface-2-light);
     --surface-3: var(--surface-3-light);
     --surface-4: var(--surface-4-light);
+    --surface-5: var(--surface-3-light);
     --surface-shadow: var(--surface-shadow-light);
     --shadow-strength: var(--shadow-strength-light);
   }
@@ -157,6 +160,7 @@
     --surface-2: var(--surface-3-dark);
     --surface-3: var(--surface-1-dark);
     --surface-4: var(--surface-2-dark);
+    --surface-5: var(--surface-3-dark);
     --surface-shadow: var(--surface-shadow-dark);
     --shadow-strength: var(--shadow-strength-dark);
   }
@@ -171,6 +175,7 @@
     --surface-2: var(--surface-3-dim);
     --surface-3: var(--surface-2-dim);
     --surface-4: var(--surface-2-dim);
+    --surface-5: var(--surface-2-dim);
     --surface-shadow: var(--surface-shadow-dim);
     --shadow-strength: var(--shadow-strength-dim);
   }
@@ -185,6 +190,7 @@
     --surface-2: var(--surface-3-grape);
     --surface-3: var(--surface-1-grape);
     --surface-4: var(--surface-2-grape);
+    --surface-5: var(--surface-3-grape);
     --surface-shadow: var(--surface-shadow-grape);
     --shadow-strength: var(--shadow-strength-grape);
   }
@@ -194,11 +200,12 @@
   
     --brand: var(--brand-choco);
     --text-1: var(--text-1-choco);
-    --text-2: var(--text-1-choco);
+    --text-2: var(--text-3-choco);
     --surface-1: var(--text-2-choco);
     --surface-2: var(--surface-4-choco);
     --surface-3: var(--surface-1-choco);
     --surface-4: var(--surface-3-choco);
+    --surface-5: var(--surface-5-choco);
     --surface-shadow: var(--surface-shadow-choco);
     --shadow-strength: var(--shadow-strength-choco);
   }
@@ -244,6 +251,9 @@
     margin-bottom: 10px;
     background-color: var(--surface-4);
     box-shadow: var(--shadow-5);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
 }
   
   form {
@@ -258,6 +268,59 @@
       grid-gap: var(--size-2);
       gap: var(--size-2);
     }
+
+  .header-grid {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+
+  #menu-container {
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  #empty-container {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 60px;
+  }
+
+  #menu-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #menu-items {
+    visibility: hidden;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: var(--surface-1);
+    position: absolute;
+    border: 2px solid var(--brand);
+    z-index: var(--layer-important);
+  }
+
+  #theme-container {
+    visibility: hidden;
+    display: grid;
+    position: absolute;
+    padding: 10px;
+    left: 206px;
+    top: 280px;
+    box-sizing: border-box;
+    background-color: var(--surface-1);
+    border: 2px solid var(--brand);
+    z-index: var(--layer-important);
+  }
+
+  #theme-switcher {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
   
   /************************************************************************************************
    < H > ELEMENT STYLES  **************************************************************************
@@ -265,6 +328,10 @@
 
   h1 {
     font-weight: var(--font-weight-1);
+  }
+
+  #task-dialog-head {
+    font-size: 24px;
   }
 
   h4 {
@@ -284,6 +351,10 @@
     line-height: var(--font-lineheight-3);
   }
 
+  label {
+    font-weight: bold;
+  }
+
   #codeflow, #projectName {
     text-align: center;
     margin-left: auto;
@@ -300,6 +371,21 @@
   #projectName {
     font-size: 24px;
     font-family: "Open Sans";
+  }
+
+  .menu-item {
+    text-align: left;
+    text-decoration: none;
+    color: var(--text-2);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 30px;
+  }
+
+  .menu-item:hover {
+    background-color: var(--surface-5);
   }
   
   /************************************************************************************************
@@ -358,6 +444,7 @@
 
 .material-icons:hover {
     box-shadow: var(--shadow-3);
+    box-shadow: 1px 1px 2px 0px;
     border: solid 1px;
     border-radius: 4px;
     cursor: pointer;
@@ -372,6 +459,13 @@
     box-shadow: 1px 1px 2px 0px;
     border: solid 1px;
     border-radius: 4px;
+}
+
+#menu-btn {
+  font-size: 48px;
+  width: 52px;
+  height: 52px;
+
 }
 
   /************************************************************************************************
@@ -389,7 +483,7 @@
     width: 95%;
     margin-bottom: 10px;
     border: 1px solid var(--text-2);
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 dialog {
@@ -415,6 +509,15 @@ dialog:not([open]) {
     pointer-events: none;
     opacity: 0;
   }
+
+#new-form {
+  flex-direction: column;
+}
+
+#new-form-article {
+  display: flex;
+  justify-content: space-between;
+}
 
 
 

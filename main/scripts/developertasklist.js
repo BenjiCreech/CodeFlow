@@ -20,7 +20,8 @@ define(function(require, exports, module) {
     */
     class DeveloperTaskList {
         constructor() {
-
+            // properties
+            //this.developerTasks = {};
         }
     }
 
@@ -29,7 +30,8 @@ define(function(require, exports, module) {
      */
     DeveloperTaskList.prototype.addNewTask = function() {
         let item = developerTask.prototype.newTask();
-         return developerTasks.push(item);
+         developerTasks.push(item);
+         return developerTasks;
     }
 
 

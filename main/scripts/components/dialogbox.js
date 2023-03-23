@@ -1,13 +1,12 @@
 
 define(function(require, exports, module) {
-    let dialogBox = require("components/dialogbox");
 
 
 // ****************************************************************************************************************
 // DEFINITIONS ****************************************************************************************************
 // ****************************************************************************************************************
 
-    let taskIdNumber = 0;
+
 
 // ****************************************************************************************************************
 // DEVELOPER WORKSPACE ********************************************************************************************
@@ -18,7 +17,7 @@ define(function(require, exports, module) {
     * constructor
     * 
     */
-    class DeveloperTask {
+    class DialogBox {
         constructor() {
             // properties
             this.devAssigned = undefined;
@@ -43,18 +42,9 @@ define(function(require, exports, module) {
         }
     }
 
-    DeveloperTask.prototype.newTask = function() {
-        return handleNew();
+    DialogBox.prototype.createNewTaskDialog = async function() {
+        await showNewTaskDialogBox();
     }
-
-    DeveloperTask.prototype.collapseTask = function() {
-
-    }
-
-    DeveloperTask.prototype.expandTask = function() {
-
-    }
-
 
 // ****************************************************************************************************************
 // INTERNAL FUNCTIONS *********************************************************************************************
@@ -63,41 +53,49 @@ define(function(require, exports, module) {
     /**
      * 
      */
-    async function handleNew() {
-        let f = this;
-        let devList = document.getElementById("list-1");
-        f.taskContainer = document.createElement("div");
-        f.taskContainer.setAttribute("class", "dev-task");
-        f.taskContainer.setAttribute("id", generateNewTaskID());
+    function buildTaskDialogLayout() {
+        let container = document.getElementById("new-form-article");
 
-        let newTaskDialogBox = new dialogBox();
-        await newTaskDialogBox.createNewTaskDialog();
+        let titleLabel = document.createElement("label");
+        titleLabel.setAttribute("for", "task-title");
+        titleLabel.setAttribute("id", "task-title-label");
+        titleLabel.innerHTML = "Task Title:";
+        let s = titleLabel.style;
+        s.marginLeft = "10px";
+        s.marginRight =  "20px";
+        s.width = "20%";
+        s.fontSize = "16px";
 
-        return devList.appendChild(f.taskContainer);
-    }
 
-    /**
-     * @param {DeveloperTask} f
-     * @returns {newId} string
-     */
-    // Maybe move this in to a utilities module
-    function generateNewTaskID() {
-        taskIdNumber++;
-        let newId = "task-" + taskIdNumber;
-        return newId;
+        let titleInput = document.createElement("input");
+        titleInput.setAttribute("type", "text");
+        titleInput.setAttribute("id", "task-title");
+        titleInput.setAttribute("name", "task-title");
+        s = titleInput.style;
+        s.marginRight = "10px";
+        s.width = "80%";
+        s.fontSize = "12px";
+        s.backgroundColor = "var(--surface-3)";
+        s.border = "1px solid var(--brand)";
+
+        container.appendChild(titleLabel);
+        container.appendChild(titleInput);
+
     }
 
     /**
      * 
      */
-    function taskStyles() {
-
+    async function showNewTaskDialogBox() {
+        let newDialog = document.getElementById('new-dialog');
+        await newDialog.showModal();
+        buildTaskDialogLayout();
     }
 
 // ****************************************************************************************************************
 // INITIALIZATION *************************************************************************************************
 // ****************************************************************************************************************
 
-    return DeveloperTask;
+    return DialogBox;
 
 });
